@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3642d56c-b96d-44a9-b975-926bc5d49d03" name="Default" comment="" />
+    <list default="true" id="3642d56c-b96d-44a9-b975-926bc5d49d03" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AlignBandsV8.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlignTIF_Stripe.py" beforeDir="false" afterPath="$PROJECT_DIR$/AlignTIF_Stripe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,27 +21,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="functions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26774">
-              <caret line="1453" column="18" selection-start-line="1453" selection-start-column="18" selection-end-line="1453" selection-end-column="18" />
+            <state relative-caret-position="330">
+              <caret line="443" column="40" lean-forward="true" selection-start-line="443" selection-start-column="40" selection-end-line="443" selection-end-column="40" />
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
+                <element signature="e#3232#3818#0" />
+                <element signature="e#3868#4514#0" />
+                <element signature="e#4576#4843#0" />
+                <element signature="e#4893#5627#0" />
+                <element signature="e#5696#5959#0" />
+                <element signature="e#5996#6174#0" />
+                <element signature="e#6208#6765#0" />
+                <element signature="e#6821#7207#0" />
+                <element signature="e#7271#7675#0" />
+                <element signature="e#7725#8010#0" />
+                <element signature="e#8090#9791#0" />
                 <element signature="e#9876#12913#0" />
                 <element signature="e#13003#15726#0" />
-                <element signature="e#15810#18523#0" />
                 <element signature="e#18569#22640#0" />
+                <element signature="e#22691#26920#0" />
+                <element signature="e#26962#29696#0" />
+                <element signature="e#29743#32635#0" />
+                <element signature="e#32675#35311#0" />
+                <element signature="e#35356#38150#0" />
+                <element signature="e#52595#54523#0" />
+                <element signature="e#54604#56538#0" />
+                <element signature="e#56572#57386#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlignTIF_IMG.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AlignTIF_IMG.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AlignTIF_IMG.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+            <state relative-caret-position="315">
+              <caret line="125" column="62" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlignTIF_Stripe_M.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AlignTIF_Stripe_M.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="165" column="44" selection-start-line="165" selection-start-column="44" selection-end-line="165" selection-end-column="44" />
+              <folding>
+                <element signature="e#15#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,8 +79,8 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-117">
-              <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+            <state relative-caret-position="539">
+              <caret line="104" column="14" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -99,11 +136,12 @@
         <option value="$PROJECT_DIR$/AlignPNG_IMG.py" />
         <option value="$PROJECT_DIR$/AlignPNG_Stripe.py" />
         <option value="$PROJECT_DIR$/AlignTIF_Block.py" />
-        <option value="$PROJECT_DIR$/AlignTIF_Stripe.py" />
         <option value="$PROJECT_DIR$/AlignTIF_IMG.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/config.yml" />
+        <option value="$PROJECT_DIR$/AlignTIF_Stripe.py" />
         <option value="$PROJECT_DIR$/functions.py" />
+        <option value="$PROJECT_DIR$/AlignTIF_Stripe_M.py" />
       </list>
     </option>
   </component>
@@ -117,10 +155,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -135,7 +173,7 @@
           <expand>
             <path>
               <item name="AlignBandsV8" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlignBandsV8" type="462c0819:PsiDirectoryNode" />
+              <item name="AlignBandsV9" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -146,16 +184,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/AlignTIF_IMG_cloud.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AlignTIF_Stripe_M.py" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\obtdata005\Desktop\AlignBandsV9" />
       <recent name="C:\Users\obtdata005\Desktop\AlignBandsV7" />
       <recent name="C:\Users\obtdata005\Desktop\AlignBandsV6" />
       <recent name="N:\code\PyCharm\AlignBandsV6" />
       <recent name="C:\Users\obtdata005\Desktop\AlignBandsV5" />
-      <recent name="D:\code\PyCharm\AlignBandsV4" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -172,7 +210,7 @@
   </component>
   <component name="RunManager" selected="Python.TIF_global">
     <configuration name="JoinBands" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -191,7 +229,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="PNG_block" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -210,7 +248,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="PNG_global" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -229,7 +267,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="PNG_stripe" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -248,7 +286,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="TIF_block" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -267,7 +305,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="TIF_global" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -280,13 +318,13 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AlignTIF_IMG.py" />
-      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\2632\test\tif3 C:\Users\obtdata005\Desktop\2632\test\global_cloud3" />
+      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\test0720\ccd2\tif C:\Users\obtdata005\Desktop\test0720\ccd2\res" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="TIF_stripe" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -299,13 +337,31 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AlignTIF_Stripe.py" />
-      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\HDZ2_20180712222632\tif\tif C:\Users\obtdata005\Desktop\HDZ2_20180712222632\tif\stripe_cloud" />
+      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\multitest\tif C:\Users\obtdata005\Desktop\multitest\single" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="TIF_stripe_M" type="PythonConfigurationType" factoryName="Python">
+      <module name="AlignBandsV9" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\obtdata005\Anaconda2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AlignTIF_Stripe_M.py" />
+      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\multitest\tif C:\Users\obtdata005\Desktop\multitest\multi" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="change" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -323,7 +379,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="resizeImg" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -342,7 +398,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="resizeImgBatch" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -361,7 +417,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="separateImg" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -380,7 +436,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV8" />
+      <module name="AlignBandsV9" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -404,6 +460,7 @@
       <item itemvalue="Python.PNG_global" />
       <item itemvalue="Python.TIF_block" />
       <item itemvalue="Python.TIF_stripe" />
+      <item itemvalue="Python.TIF_stripe_M" />
       <item itemvalue="Python.TIF_global" />
       <item itemvalue="Python.JoinBands" />
       <item itemvalue="Python.resizeImg" />
@@ -427,19 +484,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13593256" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.7096774" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298647" />
       <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43912593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3975026" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3975026" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
@@ -456,24 +512,24 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13593256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3298647" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.6264308" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3975026" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3298647" />
       <window_info anchor="right" id="SciView" order="4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +559,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/AlignTIF_Stripe.py</url>
-          <line>84</line>
+          <line>85</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -518,7 +574,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/AlignTIF_Stripe.py</url>
-          <line>275</line>
+          <line>277</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -552,11 +608,10 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="31" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AlignPNG_IMG_cloud.py" />
     <entry file="file://$PROJECT_DIR$/Tool_JoinBands.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -803,27 +858,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AlignTIF_Stripe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-          <folding>
-            <element signature="e#15#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AlignPNG_IMG.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AlignPNG_Stripe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -834,38 +872,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1558177454/cv2/cv2/__init__.py">
+    <entry file="file://$PROJECT_DIR$/AlignPNG_Stripe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="4527" column="4" selection-start-line="4527" selection-start-column="4" selection-end-line="4527" selection-end-column="4" />
+        <state relative-caret-position="1467">
+          <caret line="129" column="29" lean-forward="true" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1558177454/cv2/cv2/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26774">
-          <caret line="1453" column="18" selection-start-line="1453" selection-start-column="18" selection-end-line="1453" selection-end-column="18" />
-          <folding>
-            <element signature="e#15#24#0" expanded="true" />
-            <element signature="e#9876#12913#0" />
-            <element signature="e#13003#15726#0" />
-            <element signature="e#15810#18523#0" />
-            <element signature="e#18569#22640#0" />
-          </folding>
+        <state relative-caret-position="304">
+          <caret line="5066" column="4" selection-start-line="5066" selection-start-column="4" selection-end-line="5066" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
-          <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+        <state relative-caret-position="539">
+          <caret line="104" column="14" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AlignTIF_Stripe_M.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="165" column="44" selection-start-line="165" selection-start-column="44" selection-end-line="165" selection-end-column="44" />
+          <folding>
+            <element signature="e#15#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AlignTIF_Stripe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="281" column="87" selection-start-line="281" selection-start-column="12" selection-end-line="281" selection-end-column="87" />
+          <folding>
+            <element signature="e#15#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AlignTIF_IMG.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        <state relative-caret-position="315">
+          <caret line="125" column="62" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="443" column="40" lean-forward="true" selection-start-line="443" selection-start-column="40" selection-end-line="443" selection-end-column="40" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+            <element signature="e#3232#3818#0" />
+            <element signature="e#3868#4514#0" />
+            <element signature="e#4576#4843#0" />
+            <element signature="e#4893#5627#0" />
+            <element signature="e#5696#5959#0" />
+            <element signature="e#5996#6174#0" />
+            <element signature="e#6208#6765#0" />
+            <element signature="e#6821#7207#0" />
+            <element signature="e#7271#7675#0" />
+            <element signature="e#7725#8010#0" />
+            <element signature="e#8090#9791#0" />
+            <element signature="e#9876#12913#0" />
+            <element signature="e#13003#15726#0" />
+            <element signature="e#18569#22640#0" />
+            <element signature="e#22691#26920#0" />
+            <element signature="e#26962#29696#0" />
+            <element signature="e#29743#32635#0" />
+            <element signature="e#32675#35311#0" />
+            <element signature="e#35356#38150#0" />
+            <element signature="e#52595#54523#0" />
+            <element signature="e#54604#56538#0" />
+            <element signature="e#56572#57386#0" />
+          </folding>
         </state>
       </provider>
     </entry>

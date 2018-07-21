@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 from osgeo import gdal
 from gdalconst import *
+import time
 
 # 配置参数默认值
 win_w = 2000
@@ -33,6 +34,9 @@ cloud_ksize = 7
 isIteration = 1
 isCloudMode = 0
 cloud_th = -1
+processNum = 6
+
+global_counter = 0
 
 
 def readConfigFile(file_path):
@@ -66,6 +70,7 @@ def readConfigFile(file_path):
     global isIteration
     global isCloudMode
     global cloud_th
+    global processNum
 
     win_w = int(fs.getNode("win_w").real())
     win_h = int(fs.getNode('win_h').real())
@@ -94,6 +99,7 @@ def readConfigFile(file_path):
     isIteration = int(fs.getNode('isIteration').real())
     isCloudMode = int(fs.getNode('isCloudMode').real())
     cloud_th = int(fs.getNode('cloud_th').real())
+    processNum = int(fs.getNode('processNum').real())
 
     if isDebugMode == 0:
         isDebugMode = False
@@ -954,6 +960,71 @@ def getBandsOffsetWithNoStretch(img1, img2, number_counter):
     return int(delta_x), int(delta_y)
 
 
+def getBandsOffsetWithNoStretchWithData(img1, img2, number_counter):
+    print('=>band offset detect')
+    width1 = img1.shape[1]
+    height1 = img1.shape[0]
+    width2 = img2.shape[1]
+    height2 = img2.shape[0]
+    cen_w1 = width1 / 2
+    cen_h1 = height1 / 2
+    cen_w2 = width2 / 2
+    cen_h2 = height2 / 2
+    delta_x = 0
+    delta_y = 0
+
+    win1 = img1[cen_h1 - win_h / 2:cen_h1 + win_h / 2, cen_w1 - win_w / 2:cen_w1 + win_w / 2]
+    win2 = img2[cen_h2 - win_h / 2:cen_h2 + win_h / 2, cen_w2 - win_w / 2:cen_w2 + win_w / 2]
+    kp1_size, kp2_size = SURF_Keypoints(win1, win2, threshold=surf_th)
+    if max(kp1_size, kp2_size) < kps_min:
+        print("Too little keypoints,use smaller threshold.")
+        good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win1, win2, threshold=surf_th - surf_th_d)
+    else:
+        good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win1, win2, threshold=surf_th)
+
+    if good_kp1.__len__() == 0:
+        print("No good matches in center search window.Try top search window.")
+        win3 = img1[:win_h, cen_w1 - win_w / 2:cen_w1 + win_w / 2]
+        win4 = img2[:win_h, cen_w2 - win_w / 2:cen_w2 + win_w / 2]
+
+        kp1_size, kp2_size = SURF_Keypoints(win3, win4, threshold=surf_th)
+        if max(kp1_size, kp2_size) < kps_min:
+            print("Too little keypoints,use smaller threshold.")
+            good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win3, win4,
+                                                                   threshold=surf_th - surf_th_d)
+        else:
+            good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win3, win4, threshold=surf_th)
+
+        if good_kp1.__len__() == 0:
+            print("No good matches in top search window.Try bottom search window.")
+            win5 = img1[-win_h:, cen_w1 - win_w / 2:cen_w1 + win_w / 2]
+            win6 = img2[-win_h:, cen_w2 - win_w / 2:cen_w2 + win_w / 2]
+
+            kp1_size, kp2_size = SURF_Keypoints(win5, win6, threshold=surf_th)
+            if max(kp1_size, kp2_size) < kps_min:
+                print("Too little keypoints,use smaller threshold.")
+                good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win5, win6, threshold=surf_th - surf_th_d)
+            else:
+                good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win5, win6, threshold=surf_th)
+            if good_kp1.__len__() == 0:
+                print("No good matches in center,top,bottom search window.Use 0 as default offset.")
+                return delta_x, delta_y
+
+    for i in range(good_kp1.__len__()):
+        delta_x = delta_x + (good_kp1[i][0] - good_kp2[i][0])
+        delta_y = delta_y + (good_kp1[i][1] - good_kp2[i][1])
+    delta_x = delta_x / good_kp1.__len__()
+    delta_y = delta_y / good_kp1.__len__()
+    print('x offset:' + delta_x.__str__() + " y offset:" + delta_y.__str__())
+
+    if isDebugMode:
+        img_out = drawMatches(cv2.cvtColor(win1, cv2.COLOR_GRAY2BGR),
+                              cv2.cvtColor(win2, cv2.COLOR_GRAY2BGR),
+                              good_matches)
+        cv2.imwrite("output/win_match_" + number_counter.__str__() + ".jpg", img_out)
+    return int(delta_x), int(delta_y), good_kp1, good_kp2
+
+
 def getBandsOffsetWithNoStretchAuto(img1, img2, number_counter):
     print('=>band offset detect')
     width1 = img1.shape[1]
@@ -1486,3 +1557,158 @@ def cloudFilter(img, kps, des, ksize=5, iter=2):
     print("input points:" + kps.__len__().__str__())
     print("filtered points:" + good_kps.__len__().__str__())
     return good_kps, good_des, removed_kps, removed_des, mask, img_new
+
+
+def getStripeRange(imgName1, imgName2,
+                   band_b_ori, band_g_ori, band_b_10, band_g_10,
+                   img_h_b, img_h_g, img_w_g,
+                   gb_dx, gb_dy,
+                   isStripeStretch,
+                   imgIndex,
+                   kp1, kp2):
+    stripe_items = []
+    min_height = min(img_h_b, img_h_g)
+    stripes = min_height / stripe_height
+    default_affine, mask = cv2.estimateAffine2D(np.array(kp1), np.array(kp2))
+    print(default_affine)
+    for i in range(stripes):
+        gb_resample_start_y = i * stripe_height - stripe_extension + gb_dy
+        gb_resample_end_y = i * stripe_height + stripe_height + stripe_extension + gb_dy
+
+        if gb_resample_start_y < 0:
+            gb_resample_start_y = 0
+        if gb_resample_end_y > min_height:
+            gb_resample_end_y = min_height
+            # 有时会出现这种情况，如1000,2000，各加1500变成2500,3500，但图像为2200，所以3500超过2200，变为2200
+            # 这样就会出现2500-2200这样的情况，从而导致打开图像失败
+            if gb_resample_start_y > gb_resample_end_y:
+                gb_resample_start_y = min_height - stripe_height - 2 * stripe_extension
+
+        b_start_y = gb_resample_start_y
+        b_end_y = gb_resample_end_y
+        g_start_y = i * stripe_height
+        g_end_y = i * stripe_height + stripe_height
+        band_b_stripe_ori = band_b_ori[b_start_y:b_end_y, :]
+        band_g_stripe_ori = band_g_ori[g_start_y:g_end_y, :]
+        band_b_stripe_res = band_b_10[b_start_y:b_end_y, :]
+        band_g_stripe_res = band_g_10[g_start_y:g_end_y, :]
+
+        # 一条记录中保存相关信息
+        stripe_items.append((imgName1, imgName2,
+                             b_start_y, b_end_y, g_start_y, g_end_y,
+                             band_b_stripe_ori, band_g_stripe_ori,
+                             band_b_stripe_res, band_g_stripe_res,
+                             i + 1,
+                             img_h_b, img_h_g, img_w_g,
+                             isStripeStretch, imgIndex,
+                             default_affine))
+
+    return stripe_items
+
+
+def resampleStripe(stripe_input):
+    # 并行函数需要去除所有与顺序有关的内容，如索引、如相邻仿射矩阵约束等，否则这样的设计就没法并行
+    t1 = time.time()
+
+    img_name1 = stripe_input[0]
+    img_name2 = stripe_input[1]
+    b_start_y = stripe_input[2]
+    b_end_y = stripe_input[3]
+    g_start_y = stripe_input[4]
+    g_end_y = stripe_input[5]
+    band_b = stripe_input[6]
+    band_g = stripe_input[7]
+    band_b_resample = stripe_input[8]
+    band_g_resample = stripe_input[9]
+    i = stripe_input[10]
+    img_h_b = stripe_input[11]
+    img_h_g = stripe_input[12]
+    img_w_g = stripe_input[13]
+    isStripeStretch = stripe_input[14]
+    it = stripe_input[15]
+    default_affine = stripe_input[16]
+
+    print("band base:" + g_start_y.__str__() + " " + g_end_y.__str__())
+    print("band resample:" + b_start_y.__str__() + " " + b_end_y.__str__())
+
+    # 用于判断基准影像是否为空，对应于当基准影像的黑色部分超过条带高度时，会引发重采异常，导致多复制影像
+    res = np.count_nonzero(band_g_resample)
+    if (res * 1.0) / (band_g_resample.shape[0] * band_g_resample.shape[1]) < 0.2:
+        print("base image is empty.")
+        resampled_band_b = np.zeros([stripe_height, img_w_g], np.uint16)
+        affine1 = np.array([[1, 0, 0],
+                            [0, 1, 0]])
+
+        t2 = time.time()
+        dt = t2 - t1
+        print("cost time:" + dt.__str__())
+        return resampled_band_b, dt, affine1
+
+    # 分条带二次拉伸、配准
+    if isStripeStretch:
+        if isCloudMode:
+            kps_gb_g, kps_gb_b = alignRobust2BandsTIFWithStretchCloud(band_g, band_b, it + 1, i + 1)
+        else:
+            kps_gb_g, kps_gb_b = alignRobust2BandsTIFWithStretch(band_g, band_b, it + 1, i + 1)
+    else:
+        if isCloudMode:
+            kps_gb_g, kps_gb_b = alignRobust2BandsTIFCloud(band_g, band_b, it + 1, i + 1)
+        else:
+            kps_gb_g, kps_gb_b = alignRobust2BandsTIF(band_g, band_b, it + 1, i + 1)
+
+    # 当匹配点对小于3，无法构建仿射矩阵
+    if kps_gb_g.__len__() < 3:
+        # 判断上一个条带是否成功生成仿射矩阵，否的话直接复制影像结束本次循环
+        print("KeyPoint size is less than 3,try to use default affine mat.")
+        if isDebugMode:
+            cv2.imwrite("output/align_" + img_name2 + "_" + (i + 1).__str__().zfill(2) + ".jpg",
+                        band_b)
+        # 重采
+        resampled_band_b = cv2.warpAffine(band_b_resample, default_affine,
+                                          (band_g_resample.shape[1], band_g_resample.shape[0]))
+        t2 = time.time()
+        dt = t2 - t1
+        print("cost time:" + dt.__str__())
+        return resampled_band_b, dt, default_affine
+    # 匹配点对大于3，继续判断能否生成仿射矩阵以及生成的是否正确
+    else:
+        affine1, mask = cv2.estimateAffine2D(np.array(kps_gb_b), np.array(kps_gb_g))
+        # 如果生成失败，判断上一个条带是否成功生成仿射矩阵，如果是的话，使用上一个矩阵，否的话直接复制影像结束本次循环
+        if affine1 is None:
+            print("Estimated affine matrix is none, try to use default affine mat.")
+            if isDebugMode:
+                cv2.imwrite("output/align_" + img_name2 + "_" + (i + 1).__str__().zfill(2) + ".jpg",
+                            band_b)
+            # 重采
+            resampled_band_b = cv2.warpAffine(band_b_resample, default_affine,
+                                              (band_g_resample.shape[1], band_g_resample.shape[0]))
+            t2 = time.time()
+            dt = t2 - t1
+            print("cost time:" + dt.__str__())
+            return resampled_band_b, dt, default_affine
+        # affine matrix不为空，再判断是否正确
+        else:
+            num1 = affine1[0][0]
+            num2 = affine1[1][1]
+            print(num1, num2)
+            if affine_min < num1 < affine_max and affine_min < num2 < affine_max:
+                # 重采
+                resampled_band_b = cv2.warpAffine(band_b_resample, affine1,
+                                                  (band_g_resample.shape[1], band_g_resample.shape[0]))
+                t2 = time.time()
+                dt = t2 - t1
+                print("cost time:" + dt.__str__())
+                return resampled_band_b, dt, affine1
+            else:
+                print("Estimated affine matrix is wrong, try to use default affine mat.")
+                if isDebugMode:
+                    cv2.imwrite(
+                        "output/align_" + img_name2 + "_" + (i + 1).__str__().zfill(2) + ".jpg",
+                        band_b)
+                # 重采
+                resampled_band_b = cv2.warpAffine(band_b_resample, default_affine,
+                                                  (band_g_resample.shape[1], band_g_resample.shape[0]))
+                t2 = time.time()
+                dt = t2 - t1
+                print("cost time:" + dt.__str__())
+                return resampled_band_b, dt, default_affine

@@ -74,6 +74,7 @@ if __name__ == '__main__':
         for item in exe_paths:
             print(item)
         yoffsets = []
+        total_cost_time = []
 
         flag = raw_input("Continue?y/n")
         if flag == 'y':
@@ -257,6 +258,7 @@ if __name__ == '__main__':
                 residual_part_g = np.zeros([img_h_g - fun.stripe_height * blocks, img_w_g], np.uint16)
                 img_parts.append(residual_part_g)
 
+                total_cost_time.append(sum(cost_time))
                 print("Total cost time:" + sum(cost_time).__str__() + " s")
                 img_out = img_parts[0]
                 print("\nMosaic images...")
@@ -277,6 +279,7 @@ if __name__ == '__main__':
                 # copy base image
                 shutil.copy(files[0], output_path + "\\" + names[0])
             print("Band align finished.")
+            print("All bands total cost time:" + sum(total_cost_time).__str__() + " s")
             os.system('pause')
         else:
             os.system('pause')
