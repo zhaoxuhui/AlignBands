@@ -203,7 +203,7 @@ def generateOutputFilename(output_path, filenames, filetype):
         if i == 0:
             continue
         temp = filenames[i].split('.')[0]
-        temp = output_path + "\\" + temp + "_out." + filetype
+        temp = output_path + os.path.sep + temp + "_out." + filetype
         out_filenames.append(temp)
     return out_filenames
 
@@ -391,13 +391,13 @@ def FLANN_SURF_AutoTh_Cloud(img1, img2, fsurf_th, fsurf_th_d, fkps_min, fkps_max
     # 如果匹配结果为0，返回
     if good_matches.__len__() == 0:
         print("No enough good matches.")
-        img_show1 = np.zeros([img1.shape[0], img1.shape[1], 3], np.uint8)
-        img_show2 = np.zeros([img2.shape[0], img2.shape[1], 3], np.uint8)
-        cv2.drawKeypoints(img1, kp1, img_show1)
-        cv2.drawKeypoints(img2, kp2, img_show2)
+        img_show1 = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
+        img_show2 = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        cv2.drawKeypoints(img1, kp1, img_show1, color=(0, 0, 255))
+        cv2.drawKeypoints(img2, kp2, img_show2, color=(0, 0, 255))
         img_out = np.zeros([max(img1.shape[0], img2.shape[0]), img1.shape[1] + img2.shape[1], 3], np.uint8)
-        img_out[:img1.shape[0], :img1.shape[1], :] = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
-        img_out[:img2.shape[0], img1.shape[1]:, :] = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        img_out[:img1.shape[0], :img1.shape[1], :] = img_show1
+        img_out[:img2.shape[0], img1.shape[1]:, :] = img_show2
         return good_out_kp1, good_out_kp2, good_out, img_out
     else:
         print("good matches:" + good_matches.__len__().__str__())
@@ -450,13 +450,13 @@ def FLANN_SURF_AutoTh(img1, img2, fsurf_th, fsurf_th_d, fkps_min, fkps_max):
     # 如果匹配结果为0，返回
     if good_matches.__len__() == 0:
         print("No enough good matches.")
-        img_show1 = np.zeros([img1.shape[0], img1.shape[1], 3], np.uint8)
-        img_show2 = np.zeros([img2.shape[0], img2.shape[1], 3], np.uint8)
-        cv2.drawKeypoints(img1, kp1, img_show1)
-        cv2.drawKeypoints(img2, kp2, img_show2)
+        img_show1 = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
+        img_show2 = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        cv2.drawKeypoints(img1, kp1, img_show1, color=(0, 0, 255))
+        cv2.drawKeypoints(img2, kp2, img_show2, color=(0, 0, 255))
         img_out = np.zeros([max(img1.shape[0], img2.shape[0]), img1.shape[1] + img2.shape[1], 3], np.uint8)
-        img_out[:img1.shape[0], :img1.shape[1], :] = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
-        img_out[:img2.shape[0], img1.shape[1]:, :] = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        img_out[:img1.shape[0], :img1.shape[1], :] = img_show1
+        img_out[:img2.shape[0], img1.shape[1]:, :] = img_show2
         return good_out_kp1, good_out_kp2, good_out, img_out
     else:
         print("good matches:" + good_matches.__len__().__str__())
@@ -531,13 +531,13 @@ def FLANN_SURF(img1, img2, threshold):
 
     if good_matches.__len__() == 0:
         print("No enough good matches.")
-        img_show1 = np.zeros([img1.shape[0], img1.shape[1], 3], np.uint8)
-        img_show2 = np.zeros([img2.shape[0], img2.shape[1], 3], np.uint8)
-        cv2.drawKeypoints(img1, kp1, img_show1)
-        cv2.drawKeypoints(img2, kp2, img_show2)
+        img_show1 = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
+        img_show2 = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        cv2.drawKeypoints(img1, kp1, img_show1, color=(0, 0, 255))
+        cv2.drawKeypoints(img2, kp2, img_show2, color=(0, 0, 255))
         img_out = np.zeros([max(img1.shape[0], img2.shape[0]), img1.shape[1] + img2.shape[1], 3], np.uint8)
-        img_out[:img1.shape[0], :img1.shape[1], :] = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
-        img_out[:img2.shape[0], img1.shape[1]:, :] = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        img_out[:img1.shape[0], :img1.shape[1], :] = img_show1
+        img_out[:img2.shape[0], img1.shape[1]:, :] = img_show2
         return good_out_kp1, good_out_kp2, good_out, img_out
     else:
         print("good matches:" + good_matches.__len__().__str__())
@@ -614,13 +614,13 @@ def FLANN_SURFCloud(img1, img2, threshold):
 
     if good_matches.__len__() == 0:
         print("No enough good matches.")
-        img_show1 = np.zeros([img1.shape[0], img1.shape[1], 3], np.uint8)
-        img_show2 = np.zeros([img2.shape[0], img2.shape[1], 3], np.uint8)
-        cv2.drawKeypoints(img1, kp1, img_show1)
-        cv2.drawKeypoints(img2, kp2, img_show2)
+        img_show1 = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
+        img_show2 = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        cv2.drawKeypoints(img1, kp1, img_show1, color=(0, 0, 255))
+        cv2.drawKeypoints(img2, kp2, img_show2, color=(0, 0, 255))
         img_out = np.zeros([max(img1.shape[0], img2.shape[0]), img1.shape[1] + img2.shape[1], 3], np.uint8)
-        img_out[:img1.shape[0], :img1.shape[1], :] = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
-        img_out[:img2.shape[0], img1.shape[1]:, :] = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        img_out[:img1.shape[0], :img1.shape[1], :] = img_show1
+        img_out[:img2.shape[0], img1.shape[1]:, :] = img_show2
         return good_out_kp1, good_out_kp2, good_out, img_out
     else:
         print("good matches:" + good_matches.__len__().__str__())
@@ -676,13 +676,13 @@ def FLANN_SIFT(img1, img2, fsift):
 
     if good_matches.__len__() == 0:
         print("No enough good matches.")
-        img_show1 = np.zeros([img1.shape[0], img1.shape[1], 3], np.uint8)
-        img_show2 = np.zeros([img2.shape[0], img2.shape[1], 3], np.uint8)
-        cv2.drawKeypoints(img1, kp1, img_show1)
-        cv2.drawKeypoints(img2, kp2, img_show2)
+        img_show1 = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
+        img_show2 = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        cv2.drawKeypoints(img1, kp1, img_show1, color=(0, 0, 255))
+        cv2.drawKeypoints(img2, kp2, img_show2, color=(0, 0, 255))
         img_out = np.zeros([max(img1.shape[0], img2.shape[0]), img1.shape[1] + img2.shape[1], 3], np.uint8)
-        img_out[:img1.shape[0], :img1.shape[1], :] = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
-        img_out[:img2.shape[0], img1.shape[1]:, :] = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        img_out[:img1.shape[0], :img1.shape[1], :] = img_show1
+        img_out[:img2.shape[0], img1.shape[1]:, :] = img_show2
         return good_out_kp1, good_out_kp2, good_out, img_out
     else:
 
@@ -741,13 +741,13 @@ def FLANN_SIFTCloud(img1, img2, fsift):
 
     if good_matches.__len__() == 0:
         print("No enough good matches.")
-        img_show1 = np.zeros([img1.shape[0], img1.shape[1], 3], np.uint8)
-        img_show2 = np.zeros([img2.shape[0], img2.shape[1], 3], np.uint8)
-        cv2.drawKeypoints(img1, kp1, img_show1)
-        cv2.drawKeypoints(img2, kp2, img_show2)
+        img_show1 = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
+        img_show2 = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        cv2.drawKeypoints(img1, kp1, img_show1, color=(0, 0, 255))
+        cv2.drawKeypoints(img2, kp2, img_show2, color=(0, 0, 255))
         img_out = np.zeros([max(img1.shape[0], img2.shape[0]), img1.shape[1] + img2.shape[1], 3], np.uint8)
-        img_out[:img1.shape[0], :img1.shape[1], :] = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
-        img_out[:img2.shape[0], img1.shape[1]:, :] = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        img_out[:img1.shape[0], :img1.shape[1], :] = img_show1
+        img_out[:img2.shape[0], img1.shape[1]:, :] = img_show2
         return good_out_kp1, good_out_kp2, good_out, img_out
     else:
 
@@ -794,13 +794,13 @@ def BF_ORB(img1, img2, forb_th):
 
     if matches.__len__() == 0:
         print("No enough good matches.")
-        img_show1 = np.zeros([img1.shape[0], img1.shape[1], 3], np.uint8)
-        img_show2 = np.zeros([img2.shape[0], img2.shape[1], 3], np.uint8)
-        cv2.drawKeypoints(img1, kp1, img_show1)
-        cv2.drawKeypoints(img2, kp2, img_show2)
+        img_show1 = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
+        img_show2 = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        cv2.drawKeypoints(img1, kp1, img_show1, color=(0, 0, 255))
+        cv2.drawKeypoints(img2, kp2, img_show2, color=(0, 0, 255))
         img_out = np.zeros([max(img1.shape[0], img2.shape[0]), img1.shape[1] + img2.shape[1], 3], np.uint8)
-        img_out[:img1.shape[0], :img1.shape[1], :] = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
-        img_out[:img2.shape[0], img1.shape[1]:, :] = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        img_out[:img1.shape[0], :img1.shape[1], :] = img_show1
+        img_out[:img2.shape[0], img1.shape[1]:, :] = img_show2
         return good_kps1, good_kps2, good_matches, img_out
     else:
         min_dis = 10000
@@ -861,13 +861,13 @@ def BF_ORBCloud(img1, img2, forb_th):
 
     if matches.__len__() == 0:
         print("No enough good matches.")
-        img_show1 = np.zeros([img1.shape[0], img1.shape[1], 3], np.uint8)
-        img_show2 = np.zeros([img2.shape[0], img2.shape[1], 3], np.uint8)
-        cv2.drawKeypoints(img1, kp1, img_show1)
-        cv2.drawKeypoints(img2, kp2, img_show2)
+        img_show1 = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
+        img_show2 = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        cv2.drawKeypoints(img1, kp1, img_show1, color=(0, 0, 255))
+        cv2.drawKeypoints(img2, kp2, img_show2, color=(0, 0, 255))
         img_out = np.zeros([max(img1.shape[0], img2.shape[0]), img1.shape[1] + img2.shape[1], 3], np.uint8)
-        img_out[:img1.shape[0], :img1.shape[1], :] = cv2.cvtColor(img1, cv2.COLOR_GRAY2BGR)
-        img_out[:img2.shape[0], img1.shape[1]:, :] = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+        img_out[:img1.shape[0], :img1.shape[1], :] = img_show1
+        img_out[:img2.shape[0], img1.shape[1]:, :] = img_show2
         return good_kps1, good_kps2, good_matches, img_out
     else:
         min_dis = 10000
