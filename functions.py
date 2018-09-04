@@ -5,6 +5,8 @@ import numpy as np
 from osgeo import gdal
 from gdalconst import *
 import time
+import math
+from multiprocessing import Pool
 
 # 配置参数默认值
 win_w = 2000
@@ -35,6 +37,7 @@ isIteration = 1
 isCloudMode = 0
 cloud_th = -1
 processNum = 6
+cloud_mode = 0
 
 global_counter = 0
 
@@ -71,6 +74,7 @@ def readConfigFile(file_path):
     global isCloudMode
     global cloud_th
     global processNum
+    global cloud_mode
 
     win_w = int(fs.getNode("win_w").real())
     win_h = int(fs.getNode('win_h').real())
@@ -100,6 +104,7 @@ def readConfigFile(file_path):
     isCloudMode = int(fs.getNode('isCloudMode').real())
     cloud_th = int(fs.getNode('cloud_th').real())
     processNum = int(fs.getNode('processNum').real())
+    cloud_mode = int(fs.getNode('cloud_mode').real())
 
     if isDebugMode == 0:
         isDebugMode = False
@@ -247,6 +252,13 @@ def linearStretch(img, new_min, new_max, ratio):
     print('old min = %d,old max = %d new min = %d,new max = %d' % (old_min, old_max, new_min, new_max))
     img3 = np.uint8((new_max - new_min) / (old_max - old_min) * (img2 - old_min) + new_min)
     return img3
+
+
+def logTransform(img, v=200, c=256):
+    img_normalize = img * 1.0 / c
+    log_res = c * (np.log(1 + v * img_normalize) / np.log(v + 1))
+    img_new = np.uint8(log_res)
+    return img_new
 
 
 def linearStretchWithData(img, new_min, new_max, ratio):
@@ -412,6 +424,18 @@ def FLANN_SURF_AutoTh_Cloud(img1, img2, fsurf_th, fsurf_th_d, fkps_min, fkps_max
     return good_out_kp1, good_out_kp2, good_out, img3
 
 
+def matchForMultiProcess(des):
+    des1 = des[0]
+    des2 = des[1]
+    # FLANN匹配
+    FLANN_INDEX_KDTREE = 0
+    index_params = dict(algorithm=FLANN_INDEX_KDTREE, trees=5)
+    search_params = dict(checks=50)  # or pass empty dictionary
+    flann = cv2.FlannBasedMatcher(index_params, search_params)
+    matches = flann.knnMatch(des1, des2, k=2)
+    return matches
+
+
 def FLANN_SURF_AutoTh(img1, img2, fsurf_th, fsurf_th_d, fkps_min, fkps_max):
     good_matches = []
     good_kps1 = []
@@ -440,12 +464,23 @@ def FLANN_SURF_AutoTh(img1, img2, fsurf_th, fsurf_th_d, fkps_min, fkps_max):
     index_params = dict(algorithm=FLANN_INDEX_KDTREE, trees=5)
     search_params = dict(checks=50)  # or pass empty dictionary
     flann = cv2.FlannBasedMatcher(index_params, search_params)
+
+    t1 = time.time()
     matches = flann.knnMatch(des1, des2, k=2)
+    # pool = Pool(processes=6)
+    # matches = pool.map(matchForMultiProcess, (des1, des2))
+    # pool.close()
+    # pool.join()
+
+    t2 = time.time()
     for i, (m, n) in enumerate(matches):
         if m.distance < 0.5 * n.distance:
             good_matches.append(matches[i])
             good_kps1.append(kp1[matches[i][0].queryIdx])
             good_kps2.append(kp2[matches[i][0].trainIdx])
+    t3 = time.time()
+    print('match time:', t2 - t1)
+    print('filter time:', t3 - t2)
 
     # 如果匹配结果为0，返回
     if good_matches.__len__() == 0:
@@ -953,12 +988,77 @@ def getBandsOffsetWithNoStretch(img1, img2, number_counter):
     print('x offset:' + delta_x.__str__() + " y offset:" + delta_y.__str__())
 
     if isDebugMode:
+        isDirExist()
         img_out = drawMatches(cv2.cvtColor(win1, cv2.COLOR_GRAY2BGR),
                               cv2.cvtColor(win2, cv2.COLOR_GRAY2BGR),
                               good_matches)
         cv2.imwrite("output/win_match_" + number_counter.__str__() + ".jpg", img_out)
     return int(delta_x), int(delta_y)
 
+def alignBandsWithWindow(img1, img2, number_counter):
+    print('=>band offset detect')
+    width1 = img1.shape[1]
+    height1 = img1.shape[0]
+    width2 = img2.shape[1]
+    height2 = img2.shape[0]
+    cen_w1 = width1 / 2
+    cen_h1 = height1 / 2
+    cen_w2 = width2 / 2
+    cen_h2 = height2 / 2
+    delta_x = 0
+    delta_y = 0
+
+    win1 = img1[cen_h1 - win_h / 2:cen_h1 + win_h / 2, cen_w1 - win_w / 2:cen_w1 + win_w / 2]
+    win2 = img2[cen_h2 - win_h / 2:cen_h2 + win_h / 2, cen_w2 - win_w / 2:cen_w2 + win_w / 2]
+    kp1_size, kp2_size = SURF_Keypoints(win1, win2, threshold=surf_th)
+    if max(kp1_size, kp2_size) < kps_min:
+        print("Too little keypoints,use smaller threshold.")
+        good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win1, win2, threshold=surf_th - surf_th_d)
+    else:
+        good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win1, win2, threshold=surf_th)
+
+    if good_kp1.__len__() == 0:
+        print("No good matches in center search window.Try top search window.")
+        win3 = img1[:win_h, cen_w1 - win_w / 2:cen_w1 + win_w / 2]
+        win4 = img2[:win_h, cen_w2 - win_w / 2:cen_w2 + win_w / 2]
+
+        kp1_size, kp2_size = SURF_Keypoints(win3, win4, threshold=surf_th)
+        if max(kp1_size, kp2_size) < kps_min:
+            print("Too little keypoints,use smaller threshold.")
+            good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win3, win4,
+                                                                   threshold=surf_th - surf_th_d)
+        else:
+            good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win3, win4, threshold=surf_th)
+
+        if good_kp1.__len__() == 0:
+            print("No good matches in top search window.Try bottom search window.")
+            win5 = img1[-win_h:, cen_w1 - win_w / 2:cen_w1 + win_w / 2]
+            win6 = img2[-win_h:, cen_w2 - win_w / 2:cen_w2 + win_w / 2]
+
+            kp1_size, kp2_size = SURF_Keypoints(win5, win6, threshold=surf_th)
+            if max(kp1_size, kp2_size) < kps_min:
+                print("Too little keypoints,use smaller threshold.")
+                good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win5, win6, threshold=surf_th - surf_th_d)
+            else:
+                good_kp1, good_kp2, good_matches, img_out = FLANN_SURF(win5, win6, threshold=surf_th)
+            if good_kp1.__len__() == 0:
+                print("No good matches in center,top,bottom search window.Use 0 as default offset.")
+                return delta_x, delta_y
+
+    for i in range(good_kp1.__len__()):
+        delta_x = delta_x + (good_kp1[i][0] - good_kp2[i][0])
+        delta_y = delta_y + (good_kp1[i][1] - good_kp2[i][1])
+    delta_x = delta_x / good_kp1.__len__()
+    delta_y = delta_y / good_kp1.__len__()
+    print('x offset:' + delta_x.__str__() + " y offset:" + delta_y.__str__())
+
+    if isDebugMode:
+        isDirExist()
+        img_out = drawMatches(cv2.cvtColor(win1, cv2.COLOR_GRAY2BGR),
+                              cv2.cvtColor(win2, cv2.COLOR_GRAY2BGR),
+                              good_matches)
+        cv2.imwrite("output/win_match_" + number_counter.__str__() + ".jpg", img_out)
+    return int(delta_x), int(delta_y), good_kp1, good_kp2
 
 def getBandsOffsetWithNoStretchWithData(img1, img2, number_counter):
     print('=>band offset detect')
@@ -1018,6 +1118,7 @@ def getBandsOffsetWithNoStretchWithData(img1, img2, number_counter):
     print('x offset:' + delta_x.__str__() + " y offset:" + delta_y.__str__())
 
     if isDebugMode:
+        isDirExist()
         img_out = drawMatches(cv2.cvtColor(win1, cv2.COLOR_GRAY2BGR),
                               cv2.cvtColor(win2, cv2.COLOR_GRAY2BGR),
                               good_matches)
@@ -1070,6 +1171,7 @@ def getBandsOffsetWithNoStretchAuto(img1, img2, number_counter):
     print('x offset:' + delta_x.__str__() + " y offset:" + delta_y.__str__())
 
     if isDebugMode:
+        isDirExist()
         img_out = drawMatches(cv2.cvtColor(win1, cv2.COLOR_GRAY2BGR),
                               cv2.cvtColor(win2, cv2.COLOR_GRAY2BGR),
                               good_matches)
@@ -1183,7 +1285,7 @@ def alignRobust2BandsGlobalCloud(band_g, band_b):
                                                                surf_th_global,
                                                                surf_th_d_global,
                                                                kps_min_global,
-                                                               kps_max_global)
+                                                               kps_max_global, )
     # 匹配输出的list不会为none，但有可能size为0，所以需要判断一下
     if kp_gb1.__len__() != 0:
         kps_gb_g.extend(kp_gb1)
@@ -1215,6 +1317,7 @@ def alignRobust2BandsTIF(band_g, band_b, counter, block):
     # surf匹配
     kp_gb1, kp_gb2, gb_matches1, img = FLANN_SURF_AutoTh(band_g, band_b, surf_th, surf_th_d, kps_min, kps_max)
     if isDebugMode:
+        isDirExist()
         cv2.imwrite("output/surf_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                     img)
     # 匹配输出的list不会为none，但有可能size为0，所以需要判断一下
@@ -1227,6 +1330,7 @@ def alignRobust2BandsTIF(band_g, band_b, counter, block):
         print("match points less than 3,try to add ORB features.")
         kps1, kps2, matches, img = BF_ORB(band_g, band_b, orb_th)
         if isDebugMode:
+            isDirExist()
             cv2.imwrite("output/orb_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                         img)
         if kps1.__len__() != 0:
@@ -1238,6 +1342,7 @@ def alignRobust2BandsTIF(band_g, band_b, counter, block):
         print("match points is still less than 3,try to add SIFT features.")
         kps1, kps2, matches, img = FLANN_SIFT(band_g, band_b, sift_th)
         if isDebugMode:
+            isDirExist()
             cv2.imwrite(
                 "output/sift_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                 img)
@@ -1247,6 +1352,7 @@ def alignRobust2BandsTIF(band_g, band_b, counter, block):
 
     # 输出最终匹配结果到txt文件
     if isDebugMode:
+        isDirExist()
         fout = open("output/match_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".txt",
                     'w')
         for kp1, kp2 in zip(kps_gb_g, kps_gb_b):
@@ -1263,6 +1369,7 @@ def alignRobust2BandsTIFCloud(band_g, band_b, counter, block):
     # surf匹配
     kp_gb1, kp_gb2, gb_matches1, img = FLANN_SURF_AutoTh_Cloud(band_g, band_b, surf_th, surf_th_d, kps_min, kps_max)
     if isDebugMode:
+        isDirExist()
         cv2.imwrite("output/surf_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                     img)
     # 匹配输出的list不会为none，但有可能size为0，所以需要判断一下
@@ -1275,6 +1382,7 @@ def alignRobust2BandsTIFCloud(band_g, band_b, counter, block):
         print("match points less than 3,try to add ORB features.")
         kps1, kps2, matches, img = BF_ORBCloud(band_g, band_b, orb_th)
         if isDebugMode:
+            isDirExist()
             cv2.imwrite("output/orb_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                         img)
         if kps1.__len__() != 0:
@@ -1286,6 +1394,7 @@ def alignRobust2BandsTIFCloud(band_g, band_b, counter, block):
         print("match points is still less than 3,try to add SIFT features.")
         kps1, kps2, matches, img = FLANN_SIFTCloud(band_g, band_b, sift_th)
         if isDebugMode:
+            isDirExist()
             cv2.imwrite(
                 "output/sift_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                 img)
@@ -1295,6 +1404,7 @@ def alignRobust2BandsTIFCloud(band_g, band_b, counter, block):
 
     # 输出最终匹配结果到txt文件
     if isDebugMode:
+        isDirExist()
         fout = open("output/match_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".txt",
                     'w')
         for kp1, kp2 in zip(kps_gb_g, kps_gb_b):
@@ -1315,6 +1425,7 @@ def alignRobust2BandsTIFWithStretch(band_g, band_b, counter, block):
     # surf匹配
     kp_gb1, kp_gb2, gb_matches1, img = FLANN_SURF_AutoTh(band_g, band_b, surf_th, surf_th_d, kps_min, kps_max)
     if isDebugMode:
+        isDirExist()
         cv2.imwrite("output/surf_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                     img)
     # 匹配输出的list不会为none，但有可能size为0，所以需要判断一下
@@ -1327,6 +1438,7 @@ def alignRobust2BandsTIFWithStretch(band_g, band_b, counter, block):
         print("match points less than 3,try to add ORB features.")
         kps1, kps2, matches, img = BF_ORB(band_g, band_b, orb_th)
         if isDebugMode:
+            isDirExist()
             cv2.imwrite("output/orb_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                         img)
         if kps1.__len__() != 0:
@@ -1338,6 +1450,7 @@ def alignRobust2BandsTIFWithStretch(band_g, band_b, counter, block):
         print("match points is still less than 3,try to add SIFT features.")
         kps1, kps2, matches, img = FLANN_SIFT(band_g, band_b, sift_th)
         if isDebugMode:
+            isDirExist()
             cv2.imwrite(
                 "output/sift_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                 img)
@@ -1347,6 +1460,7 @@ def alignRobust2BandsTIFWithStretch(band_g, band_b, counter, block):
 
     # 输出最终匹配结果到txt文件
     if isDebugMode:
+        isDirExist()
         fout = open("output/match_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".txt",
                     'w')
         for kp1, kp2 in zip(kps_gb_g, kps_gb_b):
@@ -1367,6 +1481,7 @@ def alignRobust2BandsTIFWithStretchCloud(band_g, band_b, counter, block):
     # surf匹配
     kp_gb1, kp_gb2, gb_matches1, img = FLANN_SURF_AutoTh_Cloud(band_g, band_b, surf_th, surf_th_d, kps_min, kps_max)
     if isDebugMode:
+        isDirExist()
         cv2.imwrite("output/surf_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                     img)
     # 匹配输出的list不会为none，但有可能size为0，所以需要判断一下
@@ -1379,6 +1494,7 @@ def alignRobust2BandsTIFWithStretchCloud(band_g, band_b, counter, block):
         print("match points less than 3,try to add ORB features.")
         kps1, kps2, matches, img = BF_ORB(band_g, band_b, orb_th)
         if isDebugMode:
+            isDirExist()
             cv2.imwrite("output/orb_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                         img)
         if kps1.__len__() != 0:
@@ -1390,6 +1506,7 @@ def alignRobust2BandsTIFWithStretchCloud(band_g, band_b, counter, block):
         print("match points is still less than 3,try to add SIFT features.")
         kps1, kps2, matches, img = FLANN_SIFT(band_g, band_b, sift_th)
         if isDebugMode:
+            isDirExist()
             cv2.imwrite(
                 "output/sift_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".jpg",
                 img)
@@ -1399,6 +1516,7 @@ def alignRobust2BandsTIFWithStretchCloud(band_g, band_b, counter, block):
 
     # 输出最终匹配结果到txt文件
     if isDebugMode:
+        isDirExist()
         fout = open("output/match_band_" + counter.__str__().zfill(2) + "_block_" + block.__str__().zfill(2) + ".txt",
                     'w')
         for kp1, kp2 in zip(kps_gb_g, kps_gb_b):
@@ -1513,30 +1631,48 @@ def loadImageWithWindow(img_path, start_x, start_y, x_range, y_range):
     return data
 
 
-def cloudFilter(img, kps, des, ksize=5, iter=2):
+def getCloudMask(img, ksize=cloud_ksize, iter=cloud_iter_num):
     print(img.shape.__len__())
     if img.shape.__len__() != 2:
         cloud = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     else:
         cloud = img
-    # 二值化
-    if cloud_th == -1:
-        ret1, th = cv2.threshold(cloud, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-        print("Auto threshold:" + ret1.__str__())
-    else:
-        ret1, th = cv2.threshold(cloud, cloud_th, 255, cv2.THRESH_BINARY)
 
-    # 膨胀
-    kernel = np.ones((ksize, ksize), np.uint8)
-    dilate = cv2.dilate(th, kernel, iterations=iter)
+    if cloud_mode == 0:
+        # 二值化
+        if cloud_th == -1:
+            ret1, th = cv2.threshold(cloud, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            print("Auto threshold:" + ret1.__str__())
+        else:
+            ret1, th = cv2.threshold(cloud, cloud_th, 255, cv2.THRESH_BINARY)
 
-    # 生成掩膜
-    mask = cv2.inRange(dilate, 0, 0)
-    dst = cv2.bitwise_and(cloud, cloud, mask=mask)
-    # dst = linearStretch(dst, 1, 255, 0.02)
-    # dst_rgb = cv2.cvtColor(dst, cv2.COLOR_GRAY2BGR)
+        kernel = np.ones((ksize, ksize), np.uint8)
+        # 先腐蚀一次，过滤掉零碎像素
+        erode = cv2.erode(th, kernel, iterations=1)
+        # 再膨胀扩展掩膜
+        dilate = cv2.dilate(erode, kernel, iterations=iter)
+        # 生成掩膜
+        mask = cv2.inRange(dilate, 0, 0)
+    elif cloud_mode == 1:
+        img_transform = logTransform(cloud)
+        diff_transform = np.abs(img_transform - cloud)
+        kernel = np.ones((ksize, ksize), np.uint8)
+        ret, th = cv2.threshold(diff_transform, 0, 255, cv2.THRESH_OTSU + cv2.THRESH_BINARY_INV)
+        erode = cv2.erode(th, kernel, iterations=1)
+        dilate = cv2.dilate(erode, kernel, iterations=iter)
+        mask = cv2.inRange(dilate, 0, 0)
+    return mask
 
-    # 根据掩膜过滤特征点
+
+def drawFilteredPts(cloud, good_kps, removed_kps):
+    # 绘制过滤后的特征点
+    cloud = cv2.cvtColor(cloud, cv2.COLOR_GRAY2BGR)
+    img_new = drawKeyPoints(cloud, good_kps, color=(0, 255, 0))
+    img_new = drawKeyPoints(img_new, removed_kps, color=(255, 0, 0))
+    return img_new
+
+
+def filterPts(kps, des, mask):
     good_kps = []
     good_des = []
     removed_kps = []
@@ -1549,13 +1685,21 @@ def cloudFilter(img, kps, des, ksize=5, iter=2):
             removed_kps.append(kps[i])
             removed_des.append(des[i])
     good_des = np.array(good_des)
-
-    # 绘制过滤后的特征点
-    cloud = cv2.cvtColor(cloud, cv2.COLOR_GRAY2BGR)
-    img_new = drawKeyPoints(cloud, good_kps, color=(0, 255, 0))
-    img_new = drawKeyPoints(img_new, removed_kps, color=(0, 0, 255))
     print("input points:" + kps.__len__().__str__())
     print("filtered points:" + good_kps.__len__().__str__())
+
+    return good_kps, good_des, removed_kps, removed_des
+
+
+def cloudFilter(img, kps, des, ksize=cloud_ksize, iter=cloud_iter_num):
+    # 生成掩膜
+    mask = getCloudMask(img, ksize, iter)
+
+    # 根据掩膜过滤特征点
+    good_kps, good_des, removed_kps, removed_des = filterPts(kps, des, mask)
+
+    # 绘制特征点
+    img_new = drawFilteredPts(img, good_kps, removed_kps)
     return good_kps, good_des, removed_kps, removed_des, mask, img_new
 
 
@@ -1661,6 +1805,7 @@ def resampleStripe(stripe_input):
         # 判断上一个条带是否成功生成仿射矩阵，否的话直接复制影像结束本次循环
         print("KeyPoint size is less than 3,try to use default affine mat.")
         if isDebugMode:
+            isDirExist()
             cv2.imwrite("output/align_" + img_name2 + "_" + (i + 1).__str__().zfill(2) + ".jpg",
                         band_b)
         # 重采
@@ -1677,6 +1822,7 @@ def resampleStripe(stripe_input):
         if affine1 is None:
             print("Estimated affine matrix is none, try to use default affine mat.")
             if isDebugMode:
+                isDirExist()
                 cv2.imwrite("output/align_" + img_name2 + "_" + (i + 1).__str__().zfill(2) + ".jpg",
                             band_b)
             # 重采
@@ -1702,6 +1848,7 @@ def resampleStripe(stripe_input):
             else:
                 print("Estimated affine matrix is wrong, try to use default affine mat.")
                 if isDebugMode:
+                    isDirExist()
                     cv2.imwrite(
                         "output/align_" + img_name2 + "_" + (i + 1).__str__().zfill(2) + ".jpg",
                         band_b)
@@ -1712,3 +1859,11 @@ def resampleStripe(stripe_input):
                 dt = t2 - t1
                 print("cost time:" + dt.__str__())
                 return resampled_band_b, dt, default_affine
+
+
+def isDirExist(path='output'):
+    if not os.path.exists(path):
+        os.mkdir(path)
+        return False
+    else:
+        return True

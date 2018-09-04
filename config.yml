@@ -50,7 +50,7 @@ stretch_th: 80
 
 # 全图模式特征提取相关参数
 # surf算子阈值
-surf_th_global: 1200
+surf_th_global: 2000
 # surf算子阈值每次迭代改变量
 surf_th_d_global: 300
 # sift算子提取特征点数量阈值
@@ -58,7 +58,7 @@ sift_th_global: 15000
 # orb算子提取特征点数量阈值
 orb_th_global: 5000
 # 提取的特征点数量上限
-kps_max_global: 50000
+kps_max_global: 20000
 # 提取的特征点数量下限
 kps_min_global: 700
 
@@ -87,11 +87,13 @@ affine_max: 1.04
 
 # 是否开启去云移动模式，1为开启，0为关闭
 isCloudMode: 0
+# 去云方法 0-线性拉伸 1-对数变换
+cloud_mode: 0
 # 配准时去云的相关参数
 # 膨胀的迭代次数
-cloud_iter_num: 8
+cloud_iter_num: 3
 # 膨胀操作的卷积核大小
-cloud_ksize: 9
+cloud_ksize: 7
 # 判别云的灰度阈值，-1表示采用OTSU方法自动确定，其它值表示手动指定(0-255)
 cloud_th: -1
 
