@@ -1,235 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3642d56c-b96d-44a9-b975-926bc5d49d03" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AlignBandsV10.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AlignBandsV11.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
-    </list>
+    <list default="true" id="48737ece-ad60-46ba-a077-d3cec05c9f7f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/AlignBandsV8$test_match.coverage" NAME="test_match Coverage Results" MODIFIED="1535598461064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AlignBandsV8$TIF_global.coverage" NAME="TIF_global Coverage Results" MODIFIED="1535427336309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AlignBandsV6$test.coverage" NAME="test Coverage Results" MODIFIED="1531156844055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AlignBandsV8$resizeImgBatch.coverage" NAME="resizeImgBatch Coverage Results" MODIFIED="1533875842316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AlignBandsV8$test_edge.coverage" NAME="test_edge Coverage Results" MODIFIED="1535562767000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AlignBandsV10$checkImages.coverage" NAME="checkImages Coverage Results" MODIFIED="1537926775337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AlignBandsV8$test.coverage" NAME="test Coverage Results" MODIFIED="1532359043559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AlignBandsV8$TIF_stripe.coverage" NAME="TIF_stripe Coverage Results" MODIFIED="1535456395221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AlignBandsV11$findAndCopyFiles.coverage" NAME="findAndCopyFiles Coverage Results" MODIFIED="1537927073952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AlignBandsV8$JoinBands.coverage" NAME="JoinBands Coverage Results" MODIFIED="1533809240773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1730645356">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="20" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.4" value="2" />
-          <entry key="project.open.time.5" value="12" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="md" value="1" />
-          <entry key="py" value="26" />
-          <entry key="yml" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Markdown" value="1" />
-          <entry key="Python" value="26" />
-          <entry key="YAML" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="py" value="665" />
-          <entry key="yml" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Python" value="665" />
-          <entry key="YAML" value="8" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1705329953">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-99018083">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="py" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Python" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="17" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PLAIN_TEXT" value="17" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-295531587">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>findAll</find>
-      <find>cv2.imwrite</find>
-      <find>50</find>
-      <find>Cloud</find>
-      <find>cloud</find>
-      <find>Auto threshold:</find>
-      <find>\\</find>
-      <find>2</find>
-    </findStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resizeImg.py" />
-        <option value="$PROJECT_DIR$/separateImg.py" />
-        <option value="$PROJECT_DIR$/resizeImgBatch.py" />
-        <option value="$PROJECT_DIR$/joinBands.py" />
-        <option value="$PROJECT_DIR$/alignPNGsWithWholeImgCloud.py" />
-        <option value="$PROJECT_DIR$/alignPNGsWithBlock.py" />
-        <option value="$PROJECT_DIR$/alignPNGsWithStripe.py" />
-        <option value="$PROJECT_DIR$/alignPNGsWithWholeImg.py" />
-        <option value="$PROJECT_DIR$/alignTIFsWithBlock.py" />
-        <option value="$PROJECT_DIR$/alignTIFsWithStripe.py" />
-        <option value="$PROJECT_DIR$/alignTIFsWithWholeImg.py" />
-        <option value="$PROJECT_DIR$/Tool_JoinBands.py" />
-        <option value="$PROJECT_DIR$/Tool_ResizeIMG.py" />
-        <option value="$PROJECT_DIR$/Tool_ResizeIMG_Batch.py" />
-        <option value="$PROJECT_DIR$/Tool_SeparateBands.py" />
-        <option value="$PROJECT_DIR$/AlignPNG_IMG(cloud).py" />
-        <option value="$PROJECT_DIR$/AlignPNG_Block_cloud.py" />
-        <option value="$PROJECT_DIR$/AlignPNG_IMG_cloud.py" />
-        <option value="$PROJECT_DIR$/AlignPNG_Stripe_cloud.py" />
-        <option value="$PROJECT_DIR$/AlignTIF_IMG_cloud.py" />
-        <option value="$PROJECT_DIR$/AlignTIF_Stripe_cloud.py" />
-        <option value="$PROJECT_DIR$/AlignTIF_Block_cloud.py" />
-        <option value="$PROJECT_DIR$/AlignPNG_Block.py" />
-        <option value="$PROJECT_DIR$/AlignPNG_IMG.py" />
-        <option value="$PROJECT_DIR$/AlignPNG_Stripe.py" />
-        <option value="$PROJECT_DIR$/AlignTIF_Block.py" />
-        <option value="$PROJECT_DIR$/AlignTIF_IMG.py" />
-        <option value="$PROJECT_DIR$/AlignTIF_Stripe.py" />
-        <option value="$PROJECT_DIR$/AlignTIF_Stripe_M.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/egde_test.py" />
-        <option value="$PROJECT_DIR$/test_match.py" />
-        <option value="$PROJECT_DIR$/functions.py" />
-        <option value="$PROJECT_DIR$/config.yml" />
-        <option value="$PROJECT_DIR$/Tool_CheckImages.py" />
+        <option value="$PROJECT_DIR$/manual_gdal.py" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1938" />
-    <option name="height" value="1058" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="AlignBandsV11" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AlignBandsV11" type="462c0819:PsiDirectoryNode" />
+              <item name="alignBands" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alignBands" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\code\PyCharm\AlignBandsV10" />
-      <recent name="C:\Users\user\Desktop\AlignBandsV10" />
-      <recent name="D:\PycharmProjects\AlignBandsV9" />
-      <recent name="C:\Users\obtdata005\Desktop\AlignBandsV9" />
-      <recent name="C:\Users\obtdata005\Desktop\AlignBandsV7" />
-    </key>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AlignBandsV2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -243,755 +59,349 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.findAndCopyFiles">
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="JoinBands" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tool_JoinBands.py" />
-      <option name="PARAMETERS" value="E:\rgb\png\rgb png E:\rgb\png\rgb\join.png" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="PNG_block" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AlignPNG_Block.py" />
-      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\temp\png C:\Users\obtdata005\Desktop\temp\block_png_out" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="PNG_global" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AlignPNG_IMG.py" />
-      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\DemoData\cloud\input C:\Users\obtdata005\Desktop\DemoData\cloud\cloud76" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="PNG_stripe" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AlignPNG_Stripe.py" />
-      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\HAZ2_20180713222912\png\png C:\Users\obtdata005\Desktop\HAZ2_20180713222912\png\global" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TIF_block" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AlignTIF_Block.py" />
-      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\DemoData\HBZ1_2018052422310501\cut1\rgb\cut2 C:\Users\obtdata005\Desktop\DemoData\HBZ1_2018052422310501\cut1\rgb\cut2\res" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TIF_global" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AlignTIF_IMG.py" />
-      <option name="PARAMETERS" value="C:\Users\user\Desktop\733\tif-rgb C:\Users\user\Desktop\733\res-rgb-cloud" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TIF_stripe" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AlignTIF_Stripe.py" />
-      <option name="PARAMETERS" value="E:\tif2\tif E:\tif2\res" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TIF_stripe_M" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AlignTIF_Stripe_M.py" />
-      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\multitest\tif C:\Users\obtdata005\Desktop\multitest\multi" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="checkImages" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tool_CheckImages.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="findAndCopyFiles" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tool_FindAndCopyFiles.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="resizeImg" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tool_ResizeIMG.py" />
-      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\DemoData\out.tif C:\Users\obtdata005\Desktop\DemoData\out2.tif 0 0 4000 1400" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="resizeImgBatch" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tool_ResizeIMG_Batch.py" />
-      <option name="PARAMETERS" value="E:\cloud\rgb tif E:\cloud\cut 500 4900 4500 2000" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="separateImg" type="PythonConfigurationType" factoryName="Python">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tool_SeparateBands.py" />
-      <option name="PARAMETERS" value="C:\Users\obtdata005\Desktop\temp\block_tif_out\join.tif C:\Users\obtdata005\Desktop\temp\block_tif_out" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Python.FlaskServer" factoryName="Flask server">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_regexPattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Twisted Trial">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <module name="AlignBandsV11" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.PNG_block" />
-      <item itemvalue="Python.PNG_stripe" />
-      <item itemvalue="Python.PNG_global" />
-      <item itemvalue="Python.TIF_block" />
-      <item itemvalue="Python.TIF_stripe" />
-      <item itemvalue="Python.TIF_stripe_M" />
-      <item itemvalue="Python.TIF_global" />
-      <item itemvalue="Python.JoinBands" />
-      <item itemvalue="Python.resizeImg" />
-      <item itemvalue="Python.resizeImgBatch" />
-      <item itemvalue="Python.separateImg" />
-      <item itemvalue="Python.checkImages" />
-      <item itemvalue="Python.findAndCopyFiles" />
-    </list>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3642d56c-b96d-44a9-b975-926bc5d49d03" name="Default" comment="" />
-      <created>1530619217357</created>
+      <changelist id="48737ece-ad60-46ba-a077-d3cec05c9f7f" name="Default" comment="" />
+      <created>1530521108085</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1530619217357</updated>
+      <updated>1530521108085</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17962466" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4283688" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39716312" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1564805" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3298647" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" auto_hide="true" id="SciView" order="3" show_stripe_button="false" type="FLOATING" weight="0.32988048" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13593256" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6264308" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3975026" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3298647" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="SciView" order="4" />
-    </layout-to-restore>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
-    <option name="LAST_COMMIT_MESSAGE" value="" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AlignTIF_Stripe.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AlignTIF_Stripe.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AlignTIF_Stripe.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AlignTIF_Stripe.py</url>
-          <line>277</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AlignPNG_Block.py</url>
-          <line>279</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AlignPNG_Stripe.py</url>
-          <line>158</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AlignPNG_Block.py</url>
-          <line>177</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AlignPNG_IMG.py</url>
-          <line>113</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AlignTIF_Block.py</url>
-          <line>199</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AlignTIF_Block.py</url>
-          <line>296</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-      </breakpoints>
+      <option name="time" value="1" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cloud.jpg" />
-    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1494736245/cv2/cv2/__init__.py" />
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1558177454/__builtin__.py" />
-    <entry file="file://$PROJECT_DIR$/Tool_SeparateBands.py">
+    <entry file="file://$PROJECT_DIR$/manual_gdal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tool_ResizeIMG.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tool_JoinBands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/ntpath.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/shutil.py" />
-    <entry file="file://$PROJECT_DIR$/AlignPNG_Block_cloud.py" />
-    <entry file="file://$PROJECT_DIR$/AlignPNG_IMG_cloud.py" />
-    <entry file="file://$PROJECT_DIR$/AlignPNG_Stripe_cloud.py" />
-    <entry file="file://$PROJECT_DIR$/AlignTIF_Block_cloud.py" />
-    <entry file="file://$PROJECT_DIR$/AlignTIF_IMG_cloud.py" />
-    <entry file="file://$PROJECT_DIR$/AlignTIF_Stripe_cloud.py" />
-    <entry file="file://$PROJECT_DIR$/AlignTIF_Block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AlignPNG_Stripe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1467">
-          <caret line="129" column="29" lean-forward="true" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1558177454/cv2/cv2/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/AlignTIF_Stripe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="281" column="87" selection-start-line="281" selection-start-column="12" selection-end-line="281" selection-end-column="87" />
+        <state relative-caret-position="39072">
+          <caret line="2997" column="69" selection-start-line="2997" selection-start-column="69" selection-end-line="2997" selection-end-column="69" />
           <folding>
-            <element signature="e#15#28#0" expanded="true" />
+            <element signature="e#58376#58596#0" />
+            <element signature="e#58633#59389#0" />
+            <element signature="e#59423#59980#0" />
+            <element signature="e#60036#60404#0" />
+            <element signature="e#60438#60767#0" />
+            <element signature="e#61303#62104#0" />
+            <element signature="e#62147#63704#0" />
+            <element signature="e#63826#73056#0" />
+            <element signature="e#73065#73133#0" />
+            <element signature="e#97076#111791#0" />
+            <element signature="e#111879#116809#0" />
+            <element signature="e#116891#128994#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/ntpath.py" />
-    <entry file="file://$PROJECT_DIR$/Tool_ResizeIMG_Batch.py">
+    <entry file="file://$PROJECT_DIR$/manual_gdal_backup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        <state relative-caret-position="374">
+          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
-    <entry file="file://$PROJECT_DIR$/egde_test.py" />
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/884504192/cv2/cv2/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/AlignPNG_IMG.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AlignPNG_Block.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AlignTIF_Stripe_M.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AlignTIF_IMG.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="141" column="88" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-442534463/cv2/cv2/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="178" column="55" selection-start-line="178" selection-start-column="55" selection-end-line="178" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-621">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_edge.py">
+    <entry file="file://$PROJECT_DIR$/cutRSImage.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_match.py">
+    <entry file="file://$PROJECT_DIR$/cutRSImageBatch.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tool_FindAndCopyFiles.py">
+    <entry file="file://$PROJECT_DIR$/hash_match.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tool_CheckImages.py">
+    <entry file="file://$PROJECT_DIR$/joinTogether.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="154" column="54" lean-forward="true" selection-start-line="154" selection-start-column="54" selection-end-line="154" selection-end-column="54" />
+        <state relative-caret-position="330">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/overlay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsimage_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2244">
+          <caret line="105" column="48" selection-start-line="105" selection-start-column="48" selection-end-line="105" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/line_match.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14520">
+          <caret line="664" column="31" lean-forward="true" selection-start-line="664" selection-start-column="31" selection-end-line="664" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual_gdal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39072">
+          <caret line="2997" column="69" selection-start-line="2997" selection-start-column="69" selection-end-line="2997" selection-end-column="69" />
+          <folding>
+            <element signature="e#58376#58596#0" />
+            <element signature="e#58633#59389#0" />
+            <element signature="e#59423#59980#0" />
+            <element signature="e#60036#60404#0" />
+            <element signature="e#60438#60767#0" />
+            <element signature="e#61303#62104#0" />
+            <element signature="e#62147#63704#0" />
+            <element signature="e#63826#73056#0" />
+            <element signature="e#73065#73133#0" />
+            <element signature="e#97076#111791#0" />
+            <element signature="e#111879#116809#0" />
+            <element signature="e#116891#128994#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual_gdal_backup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="64" lean-forward="true" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cutRSImage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cutRSImageBatch.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hash_match.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/joinTogether.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/overlay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/line_match.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsimage_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2244">
+          <caret line="105" column="48" selection-start-line="105" selection-start-column="48" selection-end-line="105" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual_gdal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39072">
+          <caret line="2997" column="69" selection-start-line="2997" selection-start-column="69" selection-end-line="2997" selection-end-column="69" />
+          <folding>
+            <element signature="e#58376#58596#0" />
+            <element signature="e#58633#59389#0" />
+            <element signature="e#59423#59980#0" />
+            <element signature="e#60036#60404#0" />
+            <element signature="e#60438#60767#0" />
+            <element signature="e#61303#62104#0" />
+            <element signature="e#62147#63704#0" />
+            <element signature="e#63826#73056#0" />
+            <element signature="e#73065#73133#0" />
+            <element signature="e#97076#111791#0" />
+            <element signature="e#111879#116809#0" />
+            <element signature="e#116891#128994#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alignScriptV2.0.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/allBandsAlign.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cutRSImage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cutRSImageBatch.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hash_match.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/joinTogether.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/line_match.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual_gdal_backup.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual_gdal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30888">
+          <caret line="1412" selection-start-line="1412" selection-end-line="1432" selection-end-column="15" />
+          <folding>
+            <element signature="e#58376#58596#0" />
+            <element signature="e#58633#59389#0" />
+            <element signature="e#59423#59980#0" />
+            <element signature="e#60036#60404#0" />
+            <element signature="e#60438#60767#0" />
+            <element signature="e#61303#62104#0" />
+            <element signature="e#62147#63704#0" />
+            <element signature="e#63826#73056#0" />
+            <element signature="e#73065#73133#0" />
+            <element signature="e#97076#111791#0" />
+            <element signature="e#111879#116809#0" />
+            <element signature="e#116891#128994#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual_gdal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46904">
+          <caret line="2132" column="68" selection-start-line="2132" selection-start-column="68" selection-end-line="2132" selection-end-column="68" />
+          <folding>
+            <element signature="e#58376#58596#0" />
+            <element signature="e#58633#59389#0" />
+            <element signature="e#59423#59980#0" />
+            <element signature="e#60036#60404#0" />
+            <element signature="e#60438#60767#0" />
+            <element signature="e#61303#62104#0" />
+            <element signature="e#62147#63704#0" />
+            <element signature="e#63826#73056#0" />
+            <element signature="e#73065#73133#0" />
+            <element signature="e#97076#111791#0" />
+            <element signature="e#111879#116809#0" />
+            <element signature="e#116891#128994#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alignBands.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alignScriptV1.0.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alignScriptV2.0.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/allBandsAlign.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/line_match.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsimage_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="105" column="48" selection-start-line="105" selection-start-column="48" selection-end-line="105" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/overlay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/joinTogether.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hash_match.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cutRSImageBatch.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cutRSImage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual_gdal_backup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual_gdal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="829">
+          <caret line="2997" column="69" selection-start-line="2997" selection-start-column="69" selection-end-line="2997" selection-end-column="69" />
+          <folding>
+            <element signature="e#58376#58596#0" />
+            <element signature="e#58633#59389#0" />
+            <element signature="e#59423#59980#0" />
+            <element signature="e#60036#60404#0" />
+            <element signature="e#60438#60767#0" />
+            <element signature="e#61303#62104#0" />
+            <element signature="e#62147#63704#0" />
+            <element signature="e#63826#73056#0" />
+            <element signature="e#73065#73133#0" />
+            <element signature="e#97076#111791#0" />
+            <element signature="e#111879#116809#0" />
+            <element signature="e#116891#128994#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="895" column="28" lean-forward="true" selection-start-line="895" selection-start-column="28" selection-end-line="895" selection-end-column="28" />
         </state>
       </provider>
     </entry>
