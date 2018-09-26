@@ -1,5 +1,5 @@
 # coding=utf-8
-import os.path
+import os
 import sys
 import shutil
 
@@ -55,6 +55,6 @@ elif sys.argv.__len__() == 4:
     if flag == 'y':
         copyFiles(paths, names, dst_dir)
     else:
-        exit()
+        os.system('pause')
 else:
     print("Input \"scriptname.py help\" for help information.")

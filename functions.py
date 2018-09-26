@@ -7,6 +7,7 @@ from gdalconst import *
 import time
 import math
 from multiprocessing import Pool
+import argparse
 
 # 配置参数默认值
 win_w = 2000
@@ -995,6 +996,7 @@ def getBandsOffsetWithNoStretch(img1, img2, number_counter):
         cv2.imwrite("output/win_match_" + number_counter.__str__() + ".jpg", img_out)
     return int(delta_x), int(delta_y)
 
+
 def alignBandsWithWindow(img1, img2, number_counter):
     print('=>band offset detect')
     width1 = img1.shape[1]
@@ -1059,6 +1061,7 @@ def alignBandsWithWindow(img1, img2, number_counter):
                               good_matches)
         cv2.imwrite("output/win_match_" + number_counter.__str__() + ".jpg", img_out)
     return int(delta_x), int(delta_y), good_kp1, good_kp2
+
 
 def getBandsOffsetWithNoStretchWithData(img1, img2, number_counter):
     print('=>band offset detect')

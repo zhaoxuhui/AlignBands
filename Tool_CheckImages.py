@@ -93,7 +93,7 @@ def getPreview(root_dir, out_dir, band_r, band_g, band_b, current, total, dtype)
                                                                                                     10:] + "." + dtype,
             bands)
         print "\n" + (
-                i + 1).__str__() + "/" + rgb_files.__len__().__str__() + "," + current.__str__() + "/" + total.__str__()
+            i + 1).__str__() + "/" + rgb_files.__len__().__str__() + "," + current.__str__() + "/" + total.__str__()
         print img_uid + "_" + rgb_files[i][3]
         print img_uid + "_" + rgb_files[i][4]
         print img_uid + "_" + rgb_files[i][5]
@@ -172,7 +172,7 @@ def getPreviewParticular(root_dir, out_dir, band_r, band_g, band_b, dtype):
                                                                                                     10:] + "." + dtype,
             bands)
         print "\n" + (
-                i + 1).__str__() + "/" + rgb_files.__len__().__str__()
+            i + 1).__str__() + "/" + rgb_files.__len__().__str__()
         print img_uid + "_" + rgb_files[i][3]
         print img_uid + "_" + rgb_files[i][4]
         print img_uid + "_" + rgb_files[i][5]
@@ -191,22 +191,22 @@ if __name__ == '__main__':
     parser.add_argument('-type', default='jpg', help='Image type.jpg recommend.')
 
     args = parser.parse_args()
-    if args.input is None:
-        print "No input images."
-        exit()
+    if args.input is not None:
+        root_dir = args.input
+        out_dir = args.output
+        band_r = args.r
+        band_g = args.g
+        band_b = args.b
+        mode = args.mode
+        dtype = args.type
 
-    root_dir = args.input
-    out_dir = args.output
-    band_r = args.r
-    band_g = args.g
-    band_b = args.b
-    mode = args.mode
-    dtype = args.type
-
-    if mode == 'd':
-        getPreviewOneDay(root_dir, out_dir, band_r, band_g, band_b, dtype)
-    elif mode == 's':
-        getPreviewParticular(root_dir, out_dir, band_r, band_g, band_b, dtype)
+        if mode == 'd':
+            getPreviewOneDay(root_dir, out_dir, band_r, band_g, band_b, dtype)
+        elif mode == 's':
+            getPreviewParticular(root_dir, out_dir, band_r, band_g, band_b, dtype)
+        else:
+            print "Check input info."
+            os.system('pause')
     else:
-        print "Check input info."
-        exit()
+        print "No input images."
+        os.system('pause')
